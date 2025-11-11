@@ -1,0 +1,103 @@
+# ===============================
+# MkDocs Configuration for GameHub Connect
+# ===============================
+
+site_name: "GameHub Connect – Smart Gaming Café Analytics Platform"
+site_description: "A React + FastAPI powered web platform for gaming café management, slot booking, and analytics."
+site_author: "Your Name"
+site_url: "https://gamehub-connect-docs.netlify.app"  # optional, add when deployed
+
+# -----------------------------------
+# Theme Configuration
+# -----------------------------------
+theme:
+  name: "material"
+  logo: "assets/logo.png"
+  favicon: "assets/favicon.png"
+  palette:
+    - scheme: default
+      primary: "indigo"
+      accent: "deep purple"
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: "deep purple"
+      accent: "light blue"
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
+    - content.code.annotate
+    - content.action.edit
+    - content.action.copy
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - navigation.instant
+
+# -----------------------------------
+# Documentation Navigation
+# -----------------------------------
+nav:
+  - 🏠 Home: index.md
+  - 📘 Functional Documentation: functional_docs.md
+  - 🧱 Schema Design: schema_design.md
+  - ⚙️ Technical Docs: technical_docs.md
+  - 🔗 API Endpoints: api_endpoints.md
+  - 📊 Analytics & Dashboard: analytics_docs.md
+  - 🚀 Deployment Guide: deployment_guide.md
+  - 🔮 Future Scope: future_scope.md
+
+# -----------------------------------
+# Plugins & Markdown Extensions
+# -----------------------------------
+plugins:
+  - search
+  - mkdocs-mermaid2-plugin
+  - mkdocs-awesome-pages-plugin
+  - git-revision-date-localized:
+      type: timeago
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - tables
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# -----------------------------------
+# Extra Configuration
+# -----------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/gamehub-connect
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/yourprofile
+  generator: false
+
+# -----------------------------------
+# Repo Integration (optional)
+# -----------------------------------
+repo_name: "yourusername/gamehub-connect"
+repo_url: "https://github.com/yourusername/gamehub-connect"
+edit_uri: "edit/main/docs/"

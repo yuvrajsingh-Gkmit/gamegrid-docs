@@ -1,0 +1,59 @@
+site_name: GamerGrid - A connected network of gamers and cafés everywhere
+site_description: A web-based platform that connects players and gaming cafés through data-driven interaction.
+site_author: Yuvraj Singh
+site_url: http://127.0.0.1:8000
+
+# -------------------------------------------------
+# Django-style theme (mkdocs-material with Django palette)
+# -------------------------------------------------
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+  icon:
+    logo: material/gamepad-variant
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/yourusername/gamehub-connect
+repo_name: gamehub-connect
+
+nav:
+  - Home: index.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_css:
+  - https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap
+
+extra:
+  generator: false
