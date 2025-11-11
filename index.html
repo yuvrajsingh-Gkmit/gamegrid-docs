@@ -453,10 +453,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tech Stack">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#frontend" class="md-nav__link">
     <span class="md-ellipsis">
       Frontend
@@ -464,8 +463,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#backend" class="md-nav__link">
     <span class="md-ellipsis">
       Backend
@@ -473,36 +472,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#devops-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Database
+      DevOps &amp; Deployment
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployment-aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment (AWS)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -647,6 +623,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-flow-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow Diagrams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-user-login-authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. User Login &amp; Authentication Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-owner-adds-cafe-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Owner Adds Café Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-owner-adds-game-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Owner Adds Game Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-owner-manages-slots-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Owner Manages Slots Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-player-booking-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Player Booking Flow
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -675,7 +705,7 @@
 
 
 <h1 id="gamergrid">🎮 <strong>GamerGrid</strong><a class="headerlink" href="#gamergrid" title="Permanent link">&para;</a></h1>
-<p><strong>Smart Gaming Café Management &amp; Slot-Tracking Platform</strong></p>
+<p><strong>Smart Gaming Café Management &amp; Slot-Tracking and Booking Platform</strong></p>
 <hr />
 <h2 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Players can use <strong>GamerGrid</strong> to find nearby gaming cafés and see which games are available along with their prices.<br />
@@ -830,123 +860,107 @@ the most booked slots, and their <strong>weekly revenue reports</strong> — hel
 </li>
 </ul>
 <h2 id="tech-stack"><strong>Tech Stack</strong><a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h2>
-<blockquote>
-<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Technology</th>
+<th>Version</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>React.js + Vite</strong></td>
-<td>Build a fast and modern user interface</td>
+<td>React</td>
+<td>UI library for building component-based interfaces</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Tailwind CSS</strong></td>
-<td>Simple, clean, and responsive design</td>
+<td>Vite</td>
+<td>Build tool and development server</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Axios</strong></td>
-<td>Connects frontend with backend APIs</td>
+<td>React Router</td>
+<td>Client-side routing and navigation</td>
+<td></td>
+</tr>
+<tr>
+<td>Material UI (MUI)</td>
+<td>React component library for design system</td>
+<td></td>
+</tr>
+<tr>
+<td>Axios</td>
+<td>HTTP client for API communication</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</blockquote>
-<hr />
-<blockquote>
-<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Technology</th>
+<th>Version</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Node.js + Express.js</strong></td>
-<td>Handles routes, logic, and API endpoints</td>
+<td>Python</td>
+<td>Programming language</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>JWT</strong></td>
-<td>Secure authentication and role-based authorization</td>
+<td>FastAPI</td>
+<td>Modern async web framework</td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Bcrypt.js</strong></td>
-<td>Password hashing for security</td>
+<td>SQLAlchemy</td>
+<td>SQL toolkit and ORM</td>
+<td></td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>Relational database</td>
+<td></td>
+</tr>
+<tr>
+<td>Pytest</td>
+<td>Testing framework</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</blockquote>
-<hr />
-<blockquote>
-<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
+<h2 id="devops-deployment">DevOps &amp; Deployment<a class="headerlink" href="#devops-deployment" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Technology</th>
+<th>Version</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>PostgreSQL</strong></td>
-<td>Stores users, cafés, games, slots, and bookings</td>
+<td>AWS EC2</td>
+<td>-</td>
+<td>Application hosting (compute)</td>
 </tr>
 <tr>
-<td><strong>AWS RDS</strong></td>
-<td>Cloud-hosted relational database (PostgreSQL)</td>
+<td>AWS RDS</td>
+<td>-</td>
+<td>Managed PostgreSQL database</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>-</td>
+<td>CI/CD pipeline automation</td>
 </tr>
 </tbody>
 </table>
-</blockquote>
-<hr />
-<blockquote>
-<h3 id="deployment-aws">Deployment (AWS)<a class="headerlink" href="#deployment-aws" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>AWS EC2</strong></td>
-<td>Runs the Node.js backend</td>
-</tr>
-<tr>
-<td><strong>AWS S3</strong></td>
-<td>Hosts the static frontend (React build)</td>
-</tr>
-<tr>
-<td><strong>AWS CloudWatch</strong></td>
-<td>Monitoring, logging, and performance tracking</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<hr />
-<blockquote>
-<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>MkDocs + Mermaid</strong></td>
-<td>For functional, technical, and schema documentation</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
 <h2 id="schema-design"><strong>Schema Design</strong><a class="headerlink" href="#schema-design" title="Permanent link">&para;</a></h2>
 <h2 id="database-overview">Database Overview<a class="headerlink" href="#database-overview" title="Permanent link">&para;</a></h2>
 <p>We use a <strong>PostgreSQL</strong> database to store all user, café, game, booking, and slot data.<br />
@@ -971,7 +985,7 @@ It’s secure, reliable, and perfect for handling real-time gaming café operati
     varchar email UK
     varchar password
     varchar full_name
-    Enum    role "player | owner"
+    uuid   role_id FK    
     varchar phone UK
     timestamp created_at
     timestamp updated_at
@@ -984,7 +998,7 @@ cafes {
     varchar name
     varchar city
     varchar area
-    varchar pincode
+    int pincode
     text landmark
     varchar phone
     timestamp created_at
@@ -1052,25 +1066,30 @@ permissions {
     timestamp deleted_at
 }</code></pre>
 <h2 id="table-schemas">Table Schemas<a class="headerlink" href="#table-schemas" title="Permanent link">&para;</a></h2>
+<hr />
 <h3 id="1-users">1. users<a class="headerlink" href="#1-users" title="Permanent link">&para;</a></h3>
-<p>This table holds information for <strong>player and café owner login</strong>.</p>
+<p>This table stores all registered users — both <strong>players</strong> and <strong>café owners</strong> — with linked roles.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">email</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">password_hash</span><span class="w">   </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">password</span><span class="w">        </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">full_name</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">),</span>
-<span class="w">    </span><span class="k">role</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="k">role</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;player&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;owner&#39;</span><span class="p">)),</span>
-<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">RESTRICT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>email:</strong> Used for login; must be unique.</li>
-<li><strong>password_hash:</strong> Encrypted password for secure login.</li>
-<li><strong>role:</strong> Defines whether the user is a player or café owner.</li>
+<li><strong>role_id:</strong> Foreign key → links to <code>roles</code> table.</li>
+<li><strong>email:</strong> Used for login, must be unique.</li>
+<li><strong>phone:</strong> Also unique, helps for verification.</li>
+<li><strong>deleted_at:</strong> Used for soft deletion (user deactivation).</li>
 </ul>
+<hr />
 <h3 id="2-cafes">2. cafes<a class="headerlink" href="#2-cafes" title="Permanent link">&para;</a></h3>
-<p>This table stores details about each café registered by an owner.</p>
+<p>This table stores details about each <strong>café owned by a user</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">cafes</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">owner_id</span><span class="w">        </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
@@ -1080,12 +1099,15 @@ permissions {
 <span class="w">    </span><span class="n">pincode</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
 <span class="w">    </span><span class="n">landmark</span><span class="w">        </span><span class="nb">TEXT</span><span class="p">,</span>
 <span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>owner_id:</strong> Links the café to its owner.</li>
+<li><strong>owner_id:</strong> The user (owner) who registered the café.</li>
 <li><strong>city, area, pincode:</strong> Used for nearby café searches.</li>
+<li><strong>Soft delete:</strong> Helps maintain deleted café records.</li>
 </ul>
 <hr />
 <h3 id="3-games">3. games<a class="headerlink" href="#3-games" title="Permanent link">&para;</a></h3>
@@ -1095,48 +1117,58 @@ permissions {
 <span class="w">    </span><span class="n">cafe_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">cafes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">price</span><span class="w">           </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>cafe_id:</strong> Connects each game to its respective café.</li>
-<li><strong>price:</strong> The cost to play the game.</li>
+<li><strong>cafe_id:</strong> Connects each game to a specific café.</li>
+<li><strong>price:</strong> Price per hour/session.</li>
+<li><strong>deleted_at:</strong> Marks temporarily removed games.</li>
 </ul>
 <hr />
 <h3 id="4-slots">4. slots<a class="headerlink" href="#4-slots" title="Permanent link">&para;</a></h3>
-<p>This table tracks <strong>available and booked time slots</strong> for each café’s games.</p>
+<p>This table manages all <strong>café time slots</strong> for games (available, pending, booked).</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">slots</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">cafe_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">cafes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">game_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">games</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">start_time</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">end_time</span><span class="w">        </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">status</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;available&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;booked&#39;</span><span class="p">,</span><span class="s1">&#39;panding&#39;</span><span class="p">)),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">    </span><span class="n">status</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;available&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;booked&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
 <li><strong>cafe_id:</strong> The café that owns the slot.</li>
-<li><strong>status:</strong> Indicates if the slot is available, booked, or blocked.</li>
+<li><strong>game_id:</strong> The game played during that slot (optional).</li>
+<li><strong>status:</strong> Slot status — <code>'available'</code>, <code>'pending'</code>, or <code>'booked'</code>.</li>
 </ul>
 <hr />
 <h3 id="5-bookings">5. bookings<a class="headerlink" href="#5-bookings" title="Permanent link">&para;</a></h3>
-<p>This table records all <strong>player bookings</strong> made for café slots.</p>
+<p>This table records all <strong>player bookings</strong> for café slots.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bookings</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">slot_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">slots</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">RESTRICT</span><span class="p">,</span>
 <span class="w">    </span><span class="n">player_id</span><span class="w">       </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">booking_time</span><span class="w">    </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">price_total</span><span class="w">     </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">price_total</span><span class="w">     </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>player_id:</strong> The user who made the booking.</li>
-<li><strong>slot_id:</strong> The specific time slot booked.</li>
-<li><strong>price_total:</strong> The total cost for the booked time.</li>
+<li><strong>slot_id:</strong> The slot being booked.</li>
+<li><strong>player_id:</strong> The user who booked the slot.</li>
+<li><strong>price_total:</strong> The total cost of that booking.</li>
 </ul>
 <hr />
 <h3 id="6-roles">6. roles<a class="headerlink" href="#6-roles" title="Permanent link">&para;</a></h3>
-<p>This table defines all <strong>system roles</strong> such as admin, owner, or player.</p>
+<p>This table defines all <strong>user roles</strong> in the system.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">roles</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
@@ -1147,10 +1179,8 @@ permissions {
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>name:</strong> The name of the role (e.g., <code>'admin'</code>, <code>'owner'</code>, <code>'player'</code>).</li>
-<li><strong>description:</strong> A short explanation of what this role can do.</li>
-<li><strong>created_at / updated_at:</strong> Track when the role was added or modified.</li>
-<li><strong>deleted_at:</strong> Used for soft deletion (keeps record but marks as inactive).</li>
+<li><strong>name:</strong> Role name (<code>player</code>, <code>owner</code>, <code>admin</code>).</li>
+<li><strong>description:</strong> Explains what this role can do.</li>
 </ul>
 <hr />
 <h3 id="7-permissions">7. permissions<a class="headerlink" href="#7-permissions" title="Permanent link">&para;</a></h3>
@@ -1165,14 +1195,12 @@ permissions {
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>name:</strong> The action name (e.g., <code>'create_slot'</code>, <code>'book_cafe'</code>, <code>'view_reports'</code>).</li>
-<li><strong>description:</strong> Describes what the permission allows.</li>
-<li><strong>created_at / updated_at:</strong> Audit timestamps.</li>
-<li><strong>deleted_at:</strong> Marks permission as soft deleted.</li>
+<li><strong>name:</strong> The action name (e.g., <code>'create_slot'</code>, <code>'book_cafe'</code>).</li>
+<li><strong>description:</strong> Describes what that permission allows.</li>
 </ul>
 <hr />
 <h3 id="8-role_permissions">8. role_permissions<a class="headerlink" href="#8-role_permissions" title="Permanent link">&para;</a></h3>
-<p>This is a <strong>junction table</strong> linking roles and permissions (many-to-many relationship).</p>
+<p>This <strong>junction table</strong> connects <code>roles</code> and <code>permissions</code> (many-to-many).</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">role_permissions</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
@@ -1183,10 +1211,8 @@ permissions {
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>role_id:</strong> The role being assigned the permission.</li>
-<li><strong>permission_id:</strong> The specific permission granted to that role.</li>
-<li><strong>created_at / updated_at:</strong> Track assignment history.</li>
-<li><strong>deleted_at:</strong> Used to deactivate a role-permission pair without deleting it.</li>
+<li><strong>role_id:</strong> The role being assigned a permission.</li>
+<li><strong>permission_id:</strong> The permission being granted to that role.</li>
 </ul>
 <hr />
 <h2 id="architecture"><strong>Architecture</strong><a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
@@ -1201,6 +1227,137 @@ permissions {
 <h2 id="aws-specific-architecture-diagram">AWS-Specific Architecture Diagram<a class="headerlink" href="#aws-specific-architecture-diagram" title="Permanent link">&para;</a></h2>
 <p>This diagram shows a simplified view of the system hosted on AWS.</p>
 <p><img alt="RetailPulse AWS Architecture" src="assets/Architecture.png" /></p>
+<hr />
+<h2 id="data-flow-diagrams"><strong>Data Flow Diagrams</strong><a class="headerlink" href="#data-flow-diagrams" title="Permanent link">&para;</a></h2>
+<h2 id="1-user-login-authentication-flow">1. User Login &amp; Authentication Flow<a class="headerlink" href="#1-user-login-authentication-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how a <strong>player or café owner logs into GamerGrid</strong>.</p>
+<pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor User
+    participant UI as Frontend
+    participant API as Backend
+    participant DB as Database
+
+    User-&gt;&gt;UI: Enters email and password
+    UI-&gt;&gt;API: Sends login credentials
+    API-&gt;&gt;DB: Validate user credentials
+    DB--&gt;&gt;API: Return result (user found / not found)
+
+    alt  Valid credentials
+        API--&gt;&gt;UI: Return auth token + role (player/owner)
+        UI--&gt;&gt;User: Redirect to dashboard
+    else Invalid password
+        API--&gt;&gt;UI: Return error "Incorrect password"
+        UI--&gt;&gt;User: Display message ("Invalid password. Please try again.")
+    else User not found
+        API--&gt;&gt;UI: Return error "User not found"
+        UI--&gt;&gt;User: Display message ("Account not found. Please sign up first.")
+    end
+</code></pre>
+<h2 id="2-owner-adds-cafe-flow">2. Owner Adds Café Flow<a class="headerlink" href="#2-owner-adds-cafe-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how a <strong>café owner registers and adds their café</strong>.</p>
+<pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner-&gt;&gt;UI: Opens "Add Café" form
+    UI-&gt;&gt;API: Submits café details (name,city,phone,address,pincode.)
+    API-&gt;&gt;DB: Insert café record 
+
+    alt Insertion Successful
+        DB--&gt;&gt;API: Return success confirmation
+        API--&gt;&gt;UI: Send "Café Added Successfully" response
+        UI--&gt;&gt;Owner: Display success message ("Café added successfully!")
+    else Insertion Failed
+        DB--&gt;&gt;API: Return error (e.g., DB connection or constraint error)
+        API--&gt;&gt;UI: Send "Failed to add café" error response
+        UI--&gt;&gt;Owner: Display error message ("Something went wrong. Please try again.")
+    end
+</code></pre>
+<h2 id="3-owner-adds-game-flow">3. Owner Adds Game Flow<a class="headerlink" href="#3-owner-adds-game-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how an <strong>owner adds games under their café</strong>.</p>
+<pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner-&gt;&gt;UI: Fills out game details (name, price)
+    UI-&gt;&gt;API: Sends game data
+    API-&gt;&gt;DB: Save new game under selected café
+
+    alt Game Saved Successfully
+        DB--&gt;&gt;API: Return success confirmation
+        API--&gt;&gt;UI: Send "Game Added Successfully"
+        UI--&gt;&gt;Owner: Display success message ("Game added successfully!")
+    else Game Save Failed
+        DB--&gt;&gt;API: Return error (e.g., DB constraint or connection error)
+        API--&gt;&gt;UI: Send "Failed to add game" error response
+        UI--&gt;&gt;Owner: Display error message ("Unable to add game. Please try again.")
+    end
+</code></pre>
+<h2 id="4-owner-manages-slots-flow">4. Owner Manages Slots Flow<a class="headerlink" href="#4-owner-manages-slots-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how the <strong>owner creates or updates time slots</strong> for bookings.</p>
+<pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner-&gt;&gt;UI: fill slotes details 
+    UI-&gt;&gt;API: Sends slot details (start_time, end_time)
+    API-&gt;&gt;DB: Insert or update slot record
+
+    alt Slot Created or Updated Successfully
+        DB--&gt;&gt;API: Return success confirmation
+        API--&gt;&gt;UI: Send "Slot Created / Updated Successfully"
+        UI--&gt;&gt;Owner: Display success message ("Slot created/updated successfully!")
+    else Slot Creation or Update Failed
+        DB--&gt;&gt;API: Return error (e.g., DB constraint, invalid time, or connection failure)
+        API--&gt;&gt;UI: Send "Failed to create/update slot" error response
+        UI--&gt;&gt;Owner: Display error message ("Unable to save slot. Please try again.")
+    end
+</code></pre>
+<hr />
+<h2 id="5-player-booking-flow">5. Player Booking Flow<a class="headerlink" href="#5-player-booking-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how a <strong>player searches cafés and books a slot</strong>.</p>
+<pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Player
+    participant UI as Frontend (App / Website)
+    participant API as Backend (Server)
+    participant DB as Database
+    participant Owner as Cafe Owner Dashboard
+
+    Player-&gt;&gt;UI: Searches nearby cafés
+    note right of Player: Search can be done by&lt;br&gt;• Pincode&lt;br&gt;• City&lt;br&gt;• Area
+    UI-&gt;&gt;API: Sends request to fetch cafés and slots (with location filters)
+    API-&gt;&gt;DB: Fetch cafés, games, and slot data based on filters
+    DB--&gt;&gt;API: Return available cafés and slots
+    API--&gt;&gt;UI: Display results (cafés, games, available slots)
+
+    Player-&gt;&gt;UI: Selects slot and clicks "Book"
+    UI-&gt;&gt;API: Sends booking request (slot_id, player_id)
+    API-&gt;&gt;DB: Create booking record (status = pending)
+    API-&gt;&gt;Owner: Notify café owner of new booking request
+
+    Owner-&gt;&gt;API: Approves or rejects booking
+    alt Booking Approved
+        API-&gt;&gt;DB: Update slot.status = "booked"
+        DB--&gt;&gt;API: Confirm booking
+        API--&gt;&gt;UI: Send "Booking Confirmed" response
+        UI--&gt;&gt;Player: Show success message ("Booking confirmed successfully!")
+    else Booking Rejected
+        API-&gt;&gt;DB: Set slot.status = "available"
+        API--&gt;&gt;UI: Send "Booking Rejected" message
+        UI--&gt;&gt;Player: Display rejection message ("Booking request rejected.")
+    end
+</code></pre>
 
 
 
