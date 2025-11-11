@@ -44,9 +44,8 @@ flowchart LR
         O2["Enter Owner & Café Details<br>────────────────<br>• Owner Name<br>• Café Name<br>• Address<br>• Phone No.<br><br>"] 
         O3["Add Games & Pricing<br>────────────────<br>• Game Name<br>• Price<br><br><br>"] 
         O4["Manage Slots <br>────────────────<br>• Set Time Slots<br>• Mark 🟢Available/🔴Booked/Pending🟡 <br>• Real-time Update<br><br>"] 
-        O5["View Weekly Analytics<br>────────────────<br>• Most Played Games<br>• Least Played Games<br>• Total Bookings<br>•Most used slots<br>• Revenue report<br><br>"]
-
-        O1 --> O2 --> O3 --> O4 --> O5
+       
+        O1 --> O2 --> O3 --> O4 
     end
 
     %% === PLAYER FLOW (RIGHT – SECOND) ===
@@ -131,7 +130,7 @@ flowchart TB
 
 ### For Players
 - Register and log in to their account.  
-- Search and discover nearby gaming cafés using location.  
+- Search and discover nearby gaming cafés using pincode,area and city.  
 - View café details, available games, and prices.  
 - Check real-time slot availability.  
 - Book slots online or contact café directly for booking.  
