@@ -588,6 +588,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. roles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-role_permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. role_permissions
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -685,7 +712,7 @@ the most booked slots, and their <strong>weekly revenue reports</strong> — hel
         O2["Enter Owner &amp; Café Details&lt;br&gt;────────────────&lt;br&gt;• Owner Name&lt;br&gt;• Café Name&lt;br&gt;• Address&lt;br&gt;• Phone No.&lt;br&gt;&lt;br&gt;"] 
         O3["Add Games &amp; Pricing&lt;br&gt;────────────────&lt;br&gt;• Game Name&lt;br&gt;• Price&lt;br&gt;&lt;br&gt;&lt;br&gt;"] 
         O4["Manage Slots &lt;br&gt;────────────────&lt;br&gt;• Set Time Slots&lt;br&gt;• Mark 🟢Available/🔴Booked/Pending🟡 &lt;br&gt;• Real-time Update&lt;br&gt;&lt;br&gt;"] 
-        O5["View Weekly Analytics&lt;br&gt;────────────────&lt;br&gt;• Most Played Games&lt;br&gt;• Least Played Games&lt;br&gt;• Total Bookings&lt;br&gt;• Revenue report&lt;br&gt;&lt;br&gt;"]
+        O5["View Weekly Analytics&lt;br&gt;────────────────&lt;br&gt;• Most Played Games&lt;br&gt;• Least Played Games&lt;br&gt;• Total Bookings&lt;br&gt;•Most used slots&lt;br&gt;• Revenue report&lt;br&gt;&lt;br&gt;"]
 
         O1 --&gt; O2 --&gt; O3 --&gt; O4 --&gt; O5
     end
@@ -1106,6 +1133,60 @@ permissions {
 <li><strong>player_id:</strong> The user who made the booking.</li>
 <li><strong>slot_id:</strong> The specific time slot booked.</li>
 <li><strong>price_total:</strong> The total cost for the booked time.</li>
+</ul>
+<hr />
+<h3 id="6-roles">6. roles<a class="headerlink" href="#6-roles" title="Permanent link">&para;</a></h3>
+<p>This table defines all <strong>system roles</strong> such as admin, owner, or player.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">roles</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">description</span><span class="w">     </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>name:</strong> The name of the role (e.g., <code>'admin'</code>, <code>'owner'</code>, <code>'player'</code>).</li>
+<li><strong>description:</strong> A short explanation of what this role can do.</li>
+<li><strong>created_at / updated_at:</strong> Track when the role was added or modified.</li>
+<li><strong>deleted_at:</strong> Used for soft deletion (keeps record but marks as inactive).</li>
+</ul>
+<hr />
+<h3 id="7-permissions">7. permissions<a class="headerlink" href="#7-permissions" title="Permanent link">&para;</a></h3>
+<p>This table defines all <strong>actions or privileges</strong> that can be assigned to roles.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">permissions</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">description</span><span class="w">     </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>name:</strong> The action name (e.g., <code>'create_slot'</code>, <code>'book_cafe'</code>, <code>'view_reports'</code>).</li>
+<li><strong>description:</strong> Describes what the permission allows.</li>
+<li><strong>created_at / updated_at:</strong> Audit timestamps.</li>
+<li><strong>deleted_at:</strong> Marks permission as soft deleted.</li>
+</ul>
+<hr />
+<h3 id="8-role_permissions">8. role_permissions<a class="headerlink" href="#8-role_permissions" title="Permanent link">&para;</a></h3>
+<p>This is a <strong>junction table</strong> linking roles and permissions (many-to-many relationship).</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">role_permissions</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">permission_id</span><span class="w">   </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">permissions</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>role_id:</strong> The role being assigned the permission.</li>
+<li><strong>permission_id:</strong> The specific permission granted to that role.</li>
+<li><strong>created_at / updated_at:</strong> Track assignment history.</li>
+<li><strong>deleted_at:</strong> Used to deactivate a role-permission pair without deleting it.</li>
 </ul>
 <hr />
 <h2 id="architecture"><strong>Architecture</strong><a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
