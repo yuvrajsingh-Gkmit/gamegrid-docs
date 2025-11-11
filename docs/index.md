@@ -44,7 +44,7 @@ flowchart LR
         O2["Enter Owner & Café Details<br>────────────────<br>• Owner Name<br>• Café Name<br>• Address<br>• Phone No.<br><br>"] 
         O3["Add Games & Pricing<br>────────────────<br>• Game Name<br>• Price<br><br><br>"] 
         O4["Manage Slots <br>────────────────<br>• Set Time Slots<br>• Mark 🟢Available/🔴Booked/Pending🟡 <br>• Real-time Update<br><br>"] 
-        O5["View Weekly Analytics<br>────────────────<br>• Most Played Games<br>• Least Played Games<br>• Total Bookings<br>• Revenue report<br><br>"]
+        O5["View Weekly Analytics<br>────────────────<br>• Most Played Games<br>• Least Played Games<br>• Total Bookings<br>•Most used slots<br>• Revenue report<br><br>"]
 
         O1 --> O2 --> O3 --> O4 --> O5
     end
@@ -423,7 +423,71 @@ CREATE TABLE bookings (
 
 ---
 
+### 6. roles
 
+This table defines all **system roles** such as admin, owner, or player.
+
+```sql
+CREATE TABLE roles (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name            VARCHAR(100) UNIQUE NOT NULL,
+    description     TEXT,
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
+);
+```
+
+* **name:** The name of the role (e.g., `'admin'`, `'owner'`, `'player'`).
+* **description:** A short explanation of what this role can do.
+* **created_at / updated_at:** Track when the role was added or modified.
+* **deleted_at:** Used for soft deletion (keeps record but marks as inactive).
+
+---
+
+### 7. permissions
+
+This table defines all **actions or privileges** that can be assigned to roles.
+
+```sql
+CREATE TABLE permissions (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name            VARCHAR(150) UNIQUE NOT NULL,
+    description     TEXT,
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
+);
+```
+
+* **name:** The action name (e.g., `'create_slot'`, `'book_cafe'`, `'view_reports'`).
+* **description:** Describes what the permission allows.
+* **created_at / updated_at:** Audit timestamps.
+* **deleted_at:** Marks permission as soft deleted.
+
+---
+
+### 8. role_permissions
+
+This is a **junction table** linking roles and permissions (many-to-many relationship).
+
+```sql
+CREATE TABLE role_permissions (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    role_id         UUID NOT NULL REFERENCES roles(id) ON DELETE CASCADE,
+    permission_id   UUID NOT NULL REFERENCES permissions(id) ON DELETE CASCADE,
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
+);
+```
+
+* **role_id:** The role being assigned the permission.
+* **permission_id:** The specific permission granted to that role.
+* **created_at / updated_at:** Track assignment history.
+* **deleted_at:** Used to deactivate a role-permission pair without deleting it.
+
+---
 
 ## **Architecture**
 
@@ -442,4 +506,5 @@ RetailPulse is a standard web application with three layers:
 This diagram shows a simplified view of the system hosted on AWS.
 
 ![RetailPulse AWS Architecture](../assets/Architecture.png)
+
 
