@@ -505,6 +505,6 @@ RetailPulse is a standard web application with three layers:
 
 This diagram shows a simplified view of the system hosted on AWS.
 
-![RetailPulse AWS Architecture](../assets/Architecture.png)
+![RetailPulse AWS Architecture](./assets/Architecture.png)
 
 
