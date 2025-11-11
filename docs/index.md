@@ -1,6 +1,6 @@
 # 🎮 **GamerGrid**
 
-**Smart Gaming Café Management & Slot-Tracking Platform**
+**Smart Gaming Café Management & Slot-Tracking and Booking Platform**
 
 ---
 
@@ -162,50 +162,35 @@ flowchart TB
 - **Platform Transparency:**  
    Creates trust between players and cafés by showing real-time availability and verified information.
 
-
 ## **Tech Stack**
 
-> ### Frontend
-> | Technology | Purpose |
-> |-------------|----------|
-> | **React.js + Vite** | Build a fast and modern user interface |
-> | **Tailwind CSS** | Simple, clean, and responsive design |
-> | **Axios** | Connects frontend with backend APIs |
+## Frontend
 
----
+| Technology | Version | Purpose |
+|---|---|---|
+| React | UI library for building component-based interfaces |
+| Vite | Build tool and development server |
+| React Router | Client-side routing and navigation |
+| Material UI (MUI) | React component library for design system |
+| Axios | HTTP client for API communication |
 
-> ###  Backend
-> | Technology | Purpose |
-> |-------------|----------|
-> | **Node.js + Express.js** | Handles routes, logic, and API endpoints |
-> | **JWT** | Secure authentication and role-based authorization |
-> | **Bcrypt.js** | Password hashing for security |
+## Backend
 
----
+| Technology | Version | Purpose |
+|---|---|---|
+| Python | Programming language |
+| FastAPI | Modern async web framework |
+| SQLAlchemy | SQL toolkit and ORM |
+| PostgreSQL | Relational database |
+| Pytest | Testing framework |
 
-> ###  Database
-> | Technology | Purpose |
-> |-------------|----------|
-> | **PostgreSQL** | Stores users, cafés, games, slots, and bookings |
-> | **AWS RDS** | Cloud-hosted relational database (PostgreSQL) |
+## DevOps & Deployment
 
----
-
-> ###  Deployment (AWS)
-> | Service | Purpose |
-> |----------|----------|
-> | **AWS EC2** | Runs the Node.js backend |
-> | **AWS S3** | Hosts the static frontend (React build) |
-> | **AWS CloudWatch** | Monitoring, logging, and performance tracking |
-
----
-
-> ### Documentation
-> | Tool | Purpose |
-> |-------|----------|
-> | **MkDocs + Mermaid** | For functional, technical, and schema documentation |
-
-
+| Technology | Version | Purpose |
+|---|---|---|
+| AWS EC2 | - | Application hosting (compute) |
+| AWS RDS | - | Managed PostgreSQL database |
+| GitHub Actions | - | CI/CD pipeline automation |
 
 ## **Schema Design**
 
@@ -236,7 +221,7 @@ erDiagram
     varchar email UK
     varchar password
     varchar full_name
-    Enum    role "player | owner"
+    uuid   role_id FK    
     varchar phone UK
     timestamp created_at
     timestamp updated_at
@@ -249,7 +234,7 @@ cafes {
     varchar name
     varchar city
     varchar area
-    varchar pincode
+    int pincode
     text landmark
     varchar phone
     timestamp created_at
@@ -320,29 +305,36 @@ permissions {
 
 ## Table Schemas
 
+---
+
 ### 1. users
-This table holds information for **player and café owner login**.
+
+This table stores all registered users — both **players** and **café owners** — with linked roles.
 
 ```sql
 CREATE TABLE users (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     email           VARCHAR(255) UNIQUE NOT NULL,
-    password_hash   TEXT NOT NULL,
+    password        TEXT NOT NULL,
     full_name       VARCHAR(150),
-    role            VARCHAR(20) NOT NULL CHECK (role IN ('player', 'owner')),
-    phone           VARCHAR(20),
-    created_at      TIMESTAMP DEFAULT NOW() NOT NULL
+    role_id         UUID NOT NULL REFERENCES roles(id) ON DELETE RESTRICT,
+    phone           VARCHAR(20) UNIQUE,
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
 );
 ```
 
-* **email:** Used for login; must be unique.
-* **password_hash:** Encrypted password for secure login.
-* **role:** Defines whether the user is a player or café owner.
+* **role_id:** Foreign key → links to `roles` table.
+* **email:** Used for login, must be unique.
+* **phone:** Also unique, helps for verification.
+* **deleted_at:** Used for soft deletion (user deactivation).
 
+---
 
 ### 2. cafes
 
-This table stores details about each café registered by an owner.
+This table stores details about each **café owned by a user**.
 
 ```sql
 CREATE TABLE cafes (
@@ -354,12 +346,15 @@ CREATE TABLE cafes (
     pincode         VARCHAR(10),
     landmark        TEXT,
     phone           VARCHAR(20),
-    created_at      TIMESTAMP DEFAULT NOW() NOT NULL
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
 );
 ```
 
-* **owner_id:** Links the café to its owner.
+* **owner_id:** The user (owner) who registered the café.
 * **city, area, pincode:** Used for nearby café searches.
+* **Soft delete:** Helps maintain deleted café records.
 
 ---
 
@@ -373,39 +368,45 @@ CREATE TABLE games (
     cafe_id         UUID NOT NULL REFERENCES cafes(id) ON DELETE CASCADE,
     name            VARCHAR(100) NOT NULL,
     price           NUMERIC(10,2) NOT NULL,
-    created_at      TIMESTAMP DEFAULT NOW() NOT NULL
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
 );
 ```
 
-* **cafe_id:** Connects each game to its respective café.
-* **price:** The cost to play the game.
+* **cafe_id:** Connects each game to a specific café.
+* **price:** Price per hour/session.
+* **deleted_at:** Marks temporarily removed games.
 
 ---
 
 ### 4. slots
 
-This table tracks **available and booked time slots** for each café’s games.
+This table manages all **café time slots** for games (available, pending, booked).
 
 ```sql
 CREATE TABLE slots (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     cafe_id         UUID NOT NULL REFERENCES cafes(id) ON DELETE CASCADE,
+    game_id         UUID REFERENCES games(id) ON DELETE SET NULL,
     start_time      TIMESTAMPTZ NOT NULL,
     end_time        TIMESTAMPTZ NOT NULL,
-    status          VARCHAR(20) DEFAULT 'available' CHECK (status IN ('available', 'booked','panding')),
-    created_at      TIMESTAMP DEFAULT NOW() NOT NULL
+    status          VARCHAR(20) DEFAULT 'available' CHECK (status IN ('available', 'booked', 'pending')),
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
 );
-
 ```
 
 * **cafe_id:** The café that owns the slot.
-* **status:** Indicates if the slot is available, booked, or blocked.
+* **game_id:** The game played during that slot (optional).
+* **status:** Slot status — `'available'`, `'pending'`, or `'booked'`.
 
 ---
 
 ### 5. bookings
 
-This table records all **player bookings** made for café slots.
+This table records all **player bookings** for café slots.
 
 ```sql
 CREATE TABLE bookings (
@@ -413,19 +414,22 @@ CREATE TABLE bookings (
     slot_id         UUID NOT NULL REFERENCES slots(id) ON DELETE RESTRICT,
     player_id       UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     booking_time    TIMESTAMPTZ DEFAULT NOW() NOT NULL,
-    price_total     NUMERIC(10,2)
+    price_total     NUMERIC(10,2),
+    created_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    updated_at      TIMESTAMP DEFAULT NOW() NOT NULL,
+    deleted_at      TIMESTAMP
 );
 ```
 
-* **player_id:** The user who made the booking.
-* **slot_id:** The specific time slot booked.
-* **price_total:** The total cost for the booked time.
+* **slot_id:** The slot being booked.
+* **player_id:** The user who booked the slot.
+* **price_total:** The total cost of that booking.
 
 ---
 
 ### 6. roles
 
-This table defines all **system roles** such as admin, owner, or player.
+This table defines all **user roles** in the system.
 
 ```sql
 CREATE TABLE roles (
@@ -438,10 +442,8 @@ CREATE TABLE roles (
 );
 ```
 
-* **name:** The name of the role (e.g., `'admin'`, `'owner'`, `'player'`).
-* **description:** A short explanation of what this role can do.
-* **created_at / updated_at:** Track when the role was added or modified.
-* **deleted_at:** Used for soft deletion (keeps record but marks as inactive).
+* **name:** Role name (`player`, `owner`, `admin`).
+* **description:** Explains what this role can do.
 
 ---
 
@@ -460,16 +462,14 @@ CREATE TABLE permissions (
 );
 ```
 
-* **name:** The action name (e.g., `'create_slot'`, `'book_cafe'`, `'view_reports'`).
-* **description:** Describes what the permission allows.
-* **created_at / updated_at:** Audit timestamps.
-* **deleted_at:** Marks permission as soft deleted.
+* **name:** The action name (e.g., `'create_slot'`, `'book_cafe'`).
+* **description:** Describes what that permission allows.
 
 ---
 
 ### 8. role_permissions
 
-This is a **junction table** linking roles and permissions (many-to-many relationship).
+This **junction table** connects `roles` and `permissions` (many-to-many).
 
 ```sql
 CREATE TABLE role_permissions (
@@ -482,10 +482,8 @@ CREATE TABLE role_permissions (
 );
 ```
 
-* **role_id:** The role being assigned the permission.
-* **permission_id:** The specific permission granted to that role.
-* **created_at / updated_at:** Track assignment history.
-* **deleted_at:** Used to deactivate a role-permission pair without deleting it.
+* **role_id:** The role being assigned a permission.
+* **permission_id:** The permission being granted to that role.
 
 ---
 
@@ -506,5 +504,169 @@ RetailPulse is a standard web application with three layers:
 This diagram shows a simplified view of the system hosted on AWS.
 
 ![RetailPulse AWS Architecture](./assets/Architecture.png)
+
+
+---
+
+## **Data Flow Diagrams**
+
+## 1. User Login & Authentication Flow
+
+This shows how a **player or café owner logs into GamerGrid**.
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor User
+    participant UI as Frontend
+    participant API as Backend
+    participant DB as Database
+
+    User->>UI: Enters email and password
+    UI->>API: Sends login credentials
+    API->>DB: Validate user credentials
+    DB-->>API: Return result (user found / not found)
+
+    alt  Valid credentials
+        API-->>UI: Return auth token + role (player/owner)
+        UI-->>User: Redirect to dashboard
+    else Invalid password
+        API-->>UI: Return error "Incorrect password"
+        UI-->>User: Display message ("Invalid password. Please try again.")
+    else User not found
+        API-->>UI: Return error "User not found"
+        UI-->>User: Display message ("Account not found. Please sign up first.")
+    end
+
+```
+
+## 2. Owner Adds Café Flow
+
+This shows how a **café owner registers and adds their café**.
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner->>UI: Opens "Add Café" form
+    UI->>API: Submits café details (name,city,phone,address,pincode.)
+    API->>DB: Insert café record 
+    
+    alt Insertion Successful
+        DB-->>API: Return success confirmation
+        API-->>UI: Send "Café Added Successfully" response
+        UI-->>Owner: Display success message ("Café added successfully!")
+    else Insertion Failed
+        DB-->>API: Return error (e.g., DB connection or constraint error)
+        API-->>UI: Send "Failed to add café" error response
+        UI-->>Owner: Display error message ("Something went wrong. Please try again.")
+    end
+
+```
+
+
+## 3. Owner Adds Game Flow
+
+This shows how an **owner adds games under their café**.
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner->>UI: Fills out game details (name, price)
+    UI->>API: Sends game data
+    API->>DB: Save new game under selected café
+
+    alt Game Saved Successfully
+        DB-->>API: Return success confirmation
+        API-->>UI: Send "Game Added Successfully"
+        UI-->>Owner: Display success message ("Game added successfully!")
+    else Game Save Failed
+        DB-->>API: Return error (e.g., DB constraint or connection error)
+        API-->>UI: Send "Failed to add game" error response
+        UI-->>Owner: Display error message ("Unable to add game. Please try again.")
+    end
+
+```
+
+## 4. Owner Manages Slots Flow
+
+This shows how the **owner creates or updates time slots** for bookings.
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Owner
+    participant UI as Owner Dashboard
+    participant API as Backend
+    participant DB as Database
+
+    Owner->>UI: fill slotes details 
+    UI->>API: Sends slot details (start_time, end_time)
+    API->>DB: Insert or update slot record
+
+    alt Slot Created or Updated Successfully
+        DB-->>API: Return success confirmation
+        API-->>UI: Send "Slot Created / Updated Successfully"
+        UI-->>Owner: Display success message ("Slot created/updated successfully!")
+    else Slot Creation or Update Failed
+        DB-->>API: Return error (e.g., DB constraint, invalid time, or connection failure)
+        API-->>UI: Send "Failed to create/update slot" error response
+        UI-->>Owner: Display error message ("Unable to save slot. Please try again.")
+    end
+
+```
+
+
+---
+## 5. Player Booking Flow
+
+This shows how a **player searches cafés and books a slot**.
+
+```mermaid
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
+sequenceDiagram
+    actor Player
+    participant UI as Frontend (App / Website)
+    participant API as Backend (Server)
+    participant DB as Database
+    participant Owner as Cafe Owner Dashboard
+
+    Player->>UI: Searches nearby cafés
+    note right of Player: Search can be done by<br>• Pincode<br>• City<br>• Area
+    UI->>API: Sends request to fetch cafés and slots (with location filters)
+    API->>DB: Fetch cafés, games, and slot data based on filters
+    DB-->>API: Return available cafés and slots
+    API-->>UI: Display results (cafés, games, available slots)
+
+    Player->>UI: Selects slot and clicks "Book"
+    UI->>API: Sends booking request (slot_id, player_id)
+    API->>DB: Create booking record (status = pending)
+    API->>Owner: Notify café owner of new booking request
+
+    Owner->>API: Approves or rejects booking
+    alt Booking Approved
+        API->>DB: Update slot.status = "booked"
+        DB-->>API: Confirm booking
+        API-->>UI: Send "Booking Confirmed" response
+        UI-->>Player: Show success message ("Booking confirmed successfully!")
+    else Booking Rejected
+        API->>DB: Set slot.status = "available"
+        API-->>UI: Send "Booking Rejected" message
+        UI-->>Player: Display rejection message ("Booking request rejected.")
+    end
+
+```
+
+
+
 
 
