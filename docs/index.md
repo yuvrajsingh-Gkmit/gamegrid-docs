@@ -77,6 +77,45 @@ flowchart LR
     linkStyle default stroke:#9CA3AF, stroke-width: 2px, stroke-dasharray: 0 0 
 
 ```
+---
+
+## **Authentication Flow**
+
+A user (either a **Player** or a **Café Owner**) enters their **email** and **password** on the login page.
+The system verifies the provided credentials in the database.
+
+* If the credentials are **valid**, the system identifies the user’s **role** (`player` or `owner`)
+  and redirects them to their respective dashboard:
+
+  * **Players** → redirected to the **Café Discovery & Slot Booking** page.
+  * **Café Owners** → redirected to the **Owner Dashboard** for managing cafés, games, and slots.
+* If the credentials are **invalid**, an error message such as *“Invalid email or password”* is displayed.
+
+---
+
+## **Authorization Rules**
+
+GamerGrid uses a **Role-Based Access Control (RBAC)** system to manage permissions and access.
+
+* A user’s **role** (Player or Owner) defines what features they can access in the system.
+* **Players** can:
+
+  * Search nearby cafés
+  * View available games and slots
+  * Book slots
+* **Café Owners** can:
+
+  * Add and manage cafés
+  * Add or edit games
+  * Create, update, time slots
+ 
+* Each role is linked to specific **permissions**, which control what actions they can perform and what pages they can access.
+* The RBAC model is implemented using three core tables:
+
+  * `roles`
+  * `permissions`
+  * `role_permissions`
+
 
 ## **Authentication & Authorization Flow**
 
@@ -229,7 +268,7 @@ erDiagram
 
 cafes {
     uuid id PK
-    uuid owner_id FK
+    uuid users_id FK
     varchar name
     varchar city
     varchar area
@@ -486,6 +525,60 @@ CREATE TABLE role_permissions (
 
 ---
 
+
+## **Indexing Strategy** 
+
+### **Auto-created indexes**
+
+These are automatically created by PostgreSQL:
+
+* **Primary keys** → on all tables (`id`)
+* **Unique constraints** →
+
+  * `users.email`
+  * `users.phone`
+  * `roles.name`
+  * `permissions.name`
+  * `cafes.owner_id` (indirectly indexed via FK)
+
+
+### **Foreign keys** (for faster JOINs and lookups)
+
+* `cafes`: `owner_id`
+* `games`: `cafe_id`
+* `slots`: `cafe_id`, `game_id`
+* `bookings`: `slot_id`, `player_id`
+* `users`: `role_id`
+* `role_permissions`: `role_id`, `permission_id`
+
+These indexes improve **JOIN performance** between related tables
+
+### **Singular Indexes**
+
+A **singular index** is created on **one column only**.
+It helps speed up queries that filter, sort, or search using a single field.
+
+**Examples in GamerGrid:**
+
+* `users.email` → used during login authentication.
+* `cafes.city` → used for city-based café searches.
+* `slots.status` → used to quickly find all available/booked slots.
+* `bookings.booking_time` → used for date or time-based reports.
+
+### **Composite Indexes**
+
+A **composite index** combines **two or more columns** into one index.
+It helps when queries use **multiple conditions together** (e.g. city + area, or cafe_id + status).
+
+**Examples in GamerGrid:**
+
+* `cafes(city, area)` → for nearby café search (city + area combined).
+* `slots(cafe_id, status)` → for showing only available slots of a specific café.
+* `bookings(player_id, slot_id)` → for fetching all bookings of one player.
+* `games(cafe_id, name)` → for looking up games under a specific café.
+
+
+
 ## **Architecture**
 
 ## System Architecture Overview
@@ -664,8 +757,4 @@ sequenceDiagram
     end
 
 ```
-
-
-
-
 
