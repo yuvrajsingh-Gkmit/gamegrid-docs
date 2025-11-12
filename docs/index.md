@@ -34,7 +34,6 @@ the most booked slots, and their **weekly revenue reports** — helping them und
 - Helps both gamers and café owners coordinate easily and efficiently.
 
 ##  **Platform Flow (System Diagram)**
-
 ```mermaid
 flowchart LR
     %% === OWNER FLOW (LEFT – FIRST) ===
@@ -77,6 +76,7 @@ flowchart LR
     linkStyle default stroke:#9CA3AF, stroke-width: 2px, stroke-dasharray: 0 0 
 
 ```
+
 ---
 
 ## **Authentication Flow**
