@@ -194,9 +194,6 @@ flowchart TB
 - **Digital Café Management:**  
    Helps café owners manage games, pricing, and slot schedules in one place instead of using manual logs.
 
-- **Revenue Growth & Insights:**  
-   Owners get analytics about their cafés — popular games, busiest hours, and weekly earnings — to improve performance.
-
 - **Platform Transparency:**  
    Creates trust between players and cafés by showing real-time availability and verified information.
 
@@ -308,7 +305,7 @@ slots {
 bookings {
     uuid id PK
     uuid slot_id FK
-    uuid player_id FK
+    uuid users_id FK
     timestamptz booking_time
     numeric price_total
     timestamp created_at
@@ -648,7 +645,7 @@ sequenceDiagram
     participant DB as Database
 
     Owner->>UI: Opens "Add Café" form
-    UI->>API: Submits café details (name,city,phone,address,pincode.)
+    UI->>API: Submits café details (cafe name,address,phone,pincode,area.)
     API->>DB: Insert café record 
     
     alt Insertion Successful
@@ -676,7 +673,7 @@ sequenceDiagram
     participant API as Backend
     participant DB as Database
 
-    Owner->>UI: Fills out game details (name, price)
+    Owner->>UI: Fills out game details (game name)
     UI->>API: Sends game data
     API->>DB: Save new game under selected café
 
