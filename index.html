@@ -726,10 +726,6 @@ The system verifies the provided credentials in the database.</p>
    Helps café owners manage games, pricing, and slot schedules in one place instead of using manual logs.</p>
 </li>
 <li>
-<p><strong>Revenue Growth &amp; Insights:</strong><br />
-   Owners get analytics about their cafés — popular games, busiest hours, and weekly earnings — to improve performance.</p>
-</li>
-<li>
 <p><strong>Platform Transparency:</strong><br />
    Creates trust between players and cafés by showing real-time availability and verified information.</p>
 </li>
@@ -921,7 +917,7 @@ slots {
 bookings {
     uuid id PK
     uuid slot_id FK
-    uuid player_id FK
+    uuid users_id FK
     timestamptz booking_time
     numeric price_total
     timestamp created_at
@@ -1200,7 +1196,7 @@ sequenceDiagram
     participant DB as Database
 
     Owner-&gt;&gt;UI: Opens "Add Café" form
-    UI-&gt;&gt;API: Submits café details (name,city,phone,address,pincode.)
+    UI-&gt;&gt;API: Submits café details (cafe name,address,phone,pincode,area.)
     API-&gt;&gt;DB: Insert café record 
 
     alt Insertion Successful
@@ -1222,7 +1218,7 @@ sequenceDiagram
     participant API as Backend
     participant DB as Database
 
-    Owner-&gt;&gt;UI: Fills out game details (name, price)
+    Owner-&gt;&gt;UI: Fills out game details (game name)
     UI-&gt;&gt;API: Sends game data
     API-&gt;&gt;DB: Save new game under selected café
 
