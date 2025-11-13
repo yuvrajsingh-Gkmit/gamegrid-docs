@@ -201,13 +201,14 @@ flowchart TB
 
 ## Frontend
 
-| Technology | Version | Purpose |
-|---|---|---|
-| React | v19.2.0 | UI library for building component-based interfaces |
-| Vite | v7.2.2 | Build tool and development server |
-| React Router | v6.28.0 | Client-side routing and navigation |
-| Axios | v1.7.7 | HTTP client for API communication 
-| Jest | v30.2.0 | JavaScript testing framework |
+| Technology | Version / Spec | Purpose |
+|-------------|----------------|----------|
+| **HTML** | HTML5 | Markup for page structure |
+| **CSS** | CSS3 (modern features) | Styling, layout (Flexbox / Grid / custom properties) |
+| **JavaScript** | Vanilla JS (ES6+) | Client-side behavior, DOM manipulation, AJAX/fetch |
+| **Fetch API** | Built-in browser API | HTTP requests (replaces Axios for simple use) |
+| **Jest** | Latest | JavaScript testing framework for unit and integration tests |
+
 
 ## Backend
 
