@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gamergrid" class="md-skip">
+        <a href="#gamegrid" class="md-skip">
           Skip to content
         </a>
       
@@ -365,10 +365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-gamergrid-does" class="md-nav__link">
+  <a href="#what-gamegrid-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What GamerGrid Does
+        What GameGrid Does
       
     </span>
   </a>
@@ -390,7 +390,7 @@
   <a href="#for-cafe-owners" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For Café Owners
+        For Cafe Owners
       
     </span>
   </a>
@@ -479,7 +479,7 @@
   <a href="#for-cafe-owners_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For Café Owners
+        For Cafe Owners
       
     </span>
   </a>
@@ -530,34 +530,38 @@
   
 
 
-<h1 id="gamergrid">🎮 <strong>GamerGrid</strong><a class="headerlink" href="#gamergrid" title="Permanent link">&para;</a></h1>
-<p><strong>Smart Gaming Café Management &amp; Slot-Tracking and Booking Platform</strong></p>
+<h1 id="gamegrid">🎮 <strong>GameGrid</strong><a class="headerlink" href="#gamegrid" title="Permanent link">&para;</a></h1>
+<p><strong>Smart Gaming Cafe Management &amp; Slot-Tracking and Booking Platform</strong></p>
 <hr />
 <h2 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>Players can use <strong>GamerGrid</strong> to find nearby gaming cafés and see which games are available along with their prices.<br />
-They can track slot availability in real time and <strong>book their sessions online</strong> or <strong>contact the café owner directly</strong> to confirm a booking.  </p>
-<p>Café owners can view <strong>detailed analytics</strong> about their cafés — such as the most played and least played games,<br />
-the most booked slots, and their <strong>weekly revenue reports</strong> — helping them understand and improve their business performance.</p>
+<p>Players can use <strong>GameGrid</strong> to find nearby gaming cafes and see which games are available.<br />
+They can track slot availability in real time and <strong>book their sessions online</strong>.<br />
+When a player books a slot, it becomes "Pending" with a 1-minute payment timer. The owner receives player details and can confirm the booking after payment.</p>
+<p>Cafe owners can manage their cafes, add games, create time slots, and manage player bookings.<br />
+They can view all slots with their status (Available/Pending/Booked) and approve bookings after payment confirmation.</p>
 <hr />
-<h2 id="what-gamergrid-does"><strong>What GamerGrid Does</strong><a class="headerlink" href="#what-gamergrid-does" title="Permanent link">&para;</a></h2>
+<h2 id="what-gamegrid-does"><strong>What GameGrid Does</strong><a class="headerlink" href="#what-gamegrid-does" title="Permanent link">&para;</a></h2>
 <h2 id="for-players">For Players<a class="headerlink" href="#for-players" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Find nearby gaming cafés.  </li>
-<li>See which games are available and their prices.  </li>
+<li>Find nearby gaming cafes (filtered by matching area and pincode).  </li>
+<li>See which games are available at selected cafe.  </li>
 <li>Track live slot availability.  </li>
-<li>Book slots online or contact the café owner directly.  </li>
+<li>Book slots online (1-minute payment pending timer).  </li>
+<li>Receive confirmation when owner approves booking.</li>
 </ul>
-<h2 id="for-cafe-owners">For Café Owners<a class="headerlink" href="#for-cafe-owners" title="Permanent link">&para;</a></h2>
+<h2 id="for-cafe-owners">For Cafe Owners<a class="headerlink" href="#for-cafe-owners" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Manage games, pricing, and slot schedules.   </li>
-<li>View analytical reports about their cafés.  </li>
-<li>Track most played and least played games, most booked slots, and weekly revenue.  </li>
+<li>Add cafe details (name, address, phone, area, pincode).  </li>
+<li>Manage games (add unlimited games).  </li>
+<li>Create time slots (fixed ₹100 per slot).  </li>
+<li>View and manage bookings (Available/Pending/Booked status).  </li>
+<li>Approve bookings after payment confirmation.</li>
 </ul>
 <h2 id="for-everyone">For Everyone<a class="headerlink" href="#for-everyone" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Increases transparency between gamers and cafés.  </li>
+<li>Increases transparency between gamers and cafes.  </li>
 <li>Saves time and reduces confusion.  </li>
-<li>Helps both gamers and café owners coordinate easily and efficiently.</li>
+<li>Helps both gamers and cafe owners coordinate easily and efficiently.</li>
 </ul>
 <h2 id="platform-flow-system-diagram"><strong>Platform Flow (System Diagram)</strong><a class="headerlink" href="#platform-flow-system-diagram" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
@@ -697,37 +701,43 @@ The system verifies the provided credentials in the database.</p>
 <h3 id="for-players_1">For Players<a class="headerlink" href="#for-players_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Register and log in to their account.  </li>
-<li>Search and discover nearby gaming cafés using pincode,area and city.  </li>
-<li>View café details, available games, and prices.  </li>
+<li>Add player details (name, address, phone, area, pincode).  </li>
+<li>Search and discover nearby gaming cafes (matching area and pincode).  </li>
+<li>View cafe details, available games.  </li>
 <li>Check real-time slot availability.  </li>
-<li>Book slots online or contact café directly for booking.  </li>
+<li>Book slots online (1-minute payment pending timer).  </li>
+<li>Receive confirmation when owner approves booking.</li>
 </ul>
-<h3 id="for-cafe-owners_1">For Café Owners<a class="headerlink" href="#for-cafe-owners_1" title="Permanent link">&para;</a></h3>
+<h3 id="for-cafe-owners_1">For Cafe Owners<a class="headerlink" href="#for-cafe-owners_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Register as a café owner and log in to their account.  </li>
-<li>Add café details such as name, address, and contact info.  </li>
-<li>Manage games, pricing, and slot schedules.  </li>
-<li>manage player bookings.  </li>
-<li>Access analytical reports — most played games, least played, most booked slots, and weekly revenue.</li>
+<li>Register as a cafe owner and log in to their account.  </li>
+<li>Add cafe details (cafe name, address, phone, area, pincode).  </li>
+<li>Add unlimited games to their cafe.  </li>
+<li>Create time slots (fixed ₹100 per slot).  </li>
+<li>Manage player bookings (view player name and phone for pending slots).  </li>
+<li>Approve bookings after payment confirmation.</li>
 </ul>
 <hr />
 <h2 id="business-use-cases"><strong>Business Use Cases</strong><a class="headerlink" href="#business-use-cases" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Easy Café Discovery:</strong><br />
-   Helps gamers quickly find nearby cafés and see game availability, prices, and open slots.</p>
+<p><strong>Easy Cafe Discovery:</strong><br />
+   Helps gamers quickly find nearby cafes (matching area and pincode) and see game availability and open slots.</p>
 </li>
 <li>
 <p><strong>Streamlined Booking Experience:</strong><br />
-   Reduces manual communication — players can check slots and book directly through the app or contact owners instantly.</p>
+   Reduces manual communication — players can check slots and book directly through the app.<br />
+   Owner receives player details and can confirm payment via WhatsApp QR code.</p>
 </li>
 <li>
-<p><strong>Digital Café Management:</strong><br />
-   Helps café owners manage games, pricing, and slot schedules in one place instead of using manual logs.</p>
+<p><strong>Digital Cafe Management:</strong><br />
+   Helps cafe owners manage games and slot schedules in one place instead of using manual logs.<br />
+   Fixed ₹100 per slot pricing simplifies management.</p>
 </li>
 <li>
 <p><strong>Platform Transparency:</strong><br />
-   Creates trust between players and cafés by showing real-time availability and verified information.</p>
+   Creates trust between players and cafes by showing real-time availability and verified information.<br />
+   1-minute payment timer ensures quick booking confirmations.</p>
 </li>
 </ul>
 <h1 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h1>
@@ -844,18 +854,24 @@ The system verifies the provided credentials in the database.</p>
 </table>
 <h2 id="schema-design"><strong>Schema Design</strong><a class="headerlink" href="#schema-design" title="Permanent link">&para;</a></h2>
 <h2 id="database-overview">Database Overview<a class="headerlink" href="#database-overview" title="Permanent link">&para;</a></h2>
-<p>We use a <strong>PostgreSQL</strong> database to store all user, café, game, booking, and slot data.<br />
-It’s secure, reliable, and perfect for handling real-time gaming café operations.</p>
+<p>We use a <strong>PostgreSQL</strong> database to store all user, cafe, game, and slot data.<br />
+It's secure, reliable, and perfect for handling real-time gaming cafe operations.</p>
+<p><strong>Key Features:</strong>
+- All tables use <strong>UUID primary keys</strong> for better security
+- <strong>Soft deletion</strong> support with <code>deleted_at</code> timestamps
+- <strong>Automatic timestamps</strong> (<code>created_at</code>, <code>modified_at</code>)
+- <strong>RBAC support</strong> with roles, permissions, and user_roles tables</p>
 <hr />
 <h2 id="entity-relationship-diagram">Entity Relationship Diagram<a class="headerlink" href="#entity-relationship-diagram" title="Permanent link">&para;</a></h2>
-<p>This diagram shows how the main data tables of <strong>GamerGrid</strong> are connected.</p>
+<p>This diagram shows how the main data tables of <strong>GameGrid</strong> are connected.</p>
 <pre class="mermaid"><code>erDiagram
-    users ||--o{ cafes : owns
-    cafes ||--o{ games : offers
-    cafes||--o{ slots : provides
-    slots||--o{ bookings : reserved_by
-    users ||--o{ bookings: makes
-    roles ||--o{ users : assigned_to
+    users ||--o| owners : has
+    users ||--o| players : has
+    owners ||--o{ games : offers
+    owners ||--o{ slots : provides
+    slots }o--o| players : booked_by
+    roles ||--o{ user_roles : assigned_to
+    users ||--o{ user_roles : has
     roles ||--o{ role_permissions : has
     permissions ||--o{ role_permissions : granted_to
 
@@ -863,69 +879,71 @@ It’s secure, reliable, and perfect for handling real-time gaming café operati
 
     users {
     uuid id PK
+    varchar username UK
     varchar email UK
-    varchar password
-    varchar full_name
-    uuid   role_id FK    
-    varchar phone UK
+    varchar hashed_password
+    enum register_as "owner | player"
+    boolean is_active
     timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
     timestamp deleted_at
 }
 
-cafes {
+owners {
     uuid id PK
-    uuid users_id FK
-    varchar name
-    varchar city
-    varchar area
-    int pincode
-    text landmark
+    uuid user_id FK UK
+    varchar cafe_name
+    varchar address
     varchar phone
+    varchar area
+    varchar pincode
     timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
+    timestamp deleted_at
+}
+
+players {
+    uuid id PK
+    uuid user_id FK UK
+    varchar name
+    varchar address
+    varchar phone
+    varchar area
+    varchar pincode
+    timestamp created_at
+    timestamp modified_at
     timestamp deleted_at
 }
 
 games {
     uuid id PK
-    uuid cafe_id FK
+    uuid owner_id FK
     varchar name
-    numeric price
     timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
     timestamp deleted_at
 }
 
 slots {
     uuid id PK
-    uuid cafe_id FK
-    uuid game_id FK
-    timestamptz start_time
-    timestamptz end_time
-    varchar status "available | booked | pending"
+    uuid owner_id FK
+    uuid player_id FK
+    varchar date
+    varchar start_time
+    varchar end_time
+    enum status "available | pending | booked"
+    float price
+    timestamptz pending_expires_at
     timestamp created_at
-    timestamp updated_at
-    timestamp deleted_at
-}
-
-bookings {
-    uuid id PK
-    uuid slot_id FK
-    uuid users_id FK
-    timestamptz booking_time
-    numeric price_total
-    timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
     timestamp deleted_at
 }
 
 roles {
     uuid id PK
     varchar name UK               
-    text description
     timestamp created_at 
-    timestamp updated_at 
+    timestamp modified_at 
     timestamp deleted_at
 }
 
@@ -934,7 +952,7 @@ role_permissions {
     uuid role_id FK
     uuid permission_id FK
     timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
     timestamp deleted_at
 }
 
@@ -943,125 +961,144 @@ permissions {
     varchar name UK
     text description
     timestamp created_at
-    timestamp updated_at
+    timestamp modified_at
+    timestamp deleted_at
+}
+
+user_roles {
+    uuid id PK
+    uuid user_id FK
+    uuid role_id FK
+    timestamp created_at
+    timestamp modified_at
     timestamp deleted_at
 }</code></pre>
 <h2 id="table-schemas">Table Schemas<a class="headerlink" href="#table-schemas" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="1-users">1. users<a class="headerlink" href="#1-users" title="Permanent link">&para;</a></h3>
-<p>This table stores all registered users — both <strong>players</strong> and <strong>café owners</strong> — with linked roles.</p>
+<p>This table stores all registered users — both <strong>players</strong> and <strong>cafe owners</strong> — with role enum.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">username</span><span class="w">        </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">email</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">password</span><span class="w">        </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">full_name</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">),</span>
-<span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">RESTRICT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">hashed_password</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">register_as</span><span class="w">     </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">register_as</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;player&#39;</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">is_active</span><span class="w">       </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">TRUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">        </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">       </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>role_id:</strong> Foreign key → links to <code>roles</code> table.</li>
+<li><strong>register_as:</strong> Enum field indicating user type (owner/player).</li>
 <li><strong>email:</strong> Used for login, must be unique.</li>
-<li><strong>phone:</strong> Also unique, helps for verification.</li>
+<li><strong>username:</strong> Also unique, used for authentication.</li>
+<li><strong>hashed_password:</strong> Argon2 hashed password.</li>
 <li><strong>deleted_at:</strong> Used for soft deletion (user deactivation).</li>
 </ul>
 <hr />
-<h3 id="2-cafes">2. cafes<a class="headerlink" href="#2-cafes" title="Permanent link">&para;</a></h3>
-<p>This table stores details about each <strong>café owned by a user</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">cafes</span><span class="w"> </span><span class="p">(</span>
+<h3 id="2-owners">2. owners<a class="headerlink" href="#2-owners" title="Permanent link">&para;</a></h3>
+<p>This table stores details about each <strong>cafe owned by a user</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">owners</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
-<span class="w">    </span><span class="n">owner_id</span><span class="w">        </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">city</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">cafe_name</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address</span><span class="w">         </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
 <span class="w">    </span><span class="n">area</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
 <span class="w">    </span><span class="n">pincode</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
-<span class="w">    </span><span class="n">landmark</span><span class="w">        </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>owner_id:</strong> The user (owner) who registered the café.</li>
-<li><strong>city, area, pincode:</strong> Used for nearby café searches.</li>
-<li><strong>Soft delete:</strong> Helps maintain deleted café records.</li>
+<li><strong>user_id:</strong> The user (owner) who registered the cafe (one-to-one relationship).</li>
+<li><strong>area, pincode:</strong> Used for nearby cafe searches (matching with player's area and pincode).</li>
+<li><strong>cafe_name, address, phone:</strong> Cafe contact and location details.</li>
+<li><strong>Soft delete:</strong> Helps maintain deleted cafe records.</li>
 </ul>
 <hr />
 <h3 id="3-games">3. games<a class="headerlink" href="#3-games" title="Permanent link">&para;</a></h3>
-<p>This table lists all <strong>games available in each café</strong>.</p>
+<p>This table lists all <strong>games available in each cafe</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">games</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
-<span class="w">    </span><span class="n">cafe_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">cafes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">owner_id</span><span class="w">        </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">owners</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">price</span><span class="w">           </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>cafe_id:</strong> Connects each game to a specific café.</li>
-<li><strong>price:</strong> Price per hour/session.</li>
+<li><strong>owner_id:</strong> Connects each game to a specific cafe owner.</li>
+<li><strong>name:</strong> Game name (e.g., "Call of Duty", "GTA 4").</li>
+<li><strong>Note:</strong> Slot price is fixed at ₹100, not per game.</li>
 <li><strong>deleted_at:</strong> Marks temporarily removed games.</li>
 </ul>
 <hr />
 <h3 id="4-slots">4. slots<a class="headerlink" href="#4-slots" title="Permanent link">&para;</a></h3>
-<p>This table manages all <strong>café time slots</strong> for games (available, pending, booked).</p>
+<p>This table manages all <strong>cafe time slots</strong> (available, pending, booked).</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">slots</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
-<span class="w">    </span><span class="n">cafe_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">cafes</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">game_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">games</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">start_time</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">end_time</span><span class="w">        </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">status</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;available&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;booked&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">)),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">id</span><span class="w">                  </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">owner_id</span><span class="w">            </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">owners</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">player_id</span><span class="w">           </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">players</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">date</span><span class="w">                </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_time</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_time</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status</span><span class="w">              </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;available&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;booked&#39;</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">price</span><span class="w">               </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pending_expires_at</span><span class="w">  </span><span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">          </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">         </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">          </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>cafe_id:</strong> The café that owns the slot.</li>
-<li><strong>game_id:</strong> The game played during that slot (optional).</li>
+<li><strong>owner_id:</strong> The cafe owner that owns the slot.</li>
+<li><strong>player_id:</strong> The player who booked the slot (null if available).</li>
+<li><strong>date:</strong> Date in YYYY-MM-DD format.</li>
+<li><strong>start_time, end_time:</strong> Time in HH:MM format.</li>
 <li><strong>status:</strong> Slot status — <code>'available'</code>, <code>'pending'</code>, or <code>'booked'</code>.</li>
+<li><strong>price:</strong> Fixed ₹100 per slot.</li>
+<li><strong>pending_expires_at:</strong> Expiration time for pending slots (1 minute timer).</li>
 </ul>
 <hr />
-<h3 id="5-bookings">5. bookings<a class="headerlink" href="#5-bookings" title="Permanent link">&para;</a></h3>
-<p>This table records all <strong>player bookings</strong> for café slots.</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">bookings</span><span class="w"> </span><span class="p">(</span>
+<h3 id="5-players">5. players<a class="headerlink" href="#5-players" title="Permanent link">&para;</a></h3>
+<p>This table stores <strong>player profile information</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">players</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
-<span class="w">    </span><span class="n">slot_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">slots</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">RESTRICT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">player_id</span><span class="w">       </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">booking_time</span><span class="w">    </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">price_total</span><span class="w">     </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<span class="w">    </span><span class="n">address</span><span class="w">         </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">phone</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">area</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="w">    </span><span class="n">pincode</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>slot_id:</strong> The slot being booked.</li>
-<li><strong>player_id:</strong> The user who booked the slot.</li>
-<li><strong>price_total:</strong> The total cost of that booking.</li>
+<li><strong>user_id:</strong> Links to the user account (one-to-one relationship).</li>
+<li><strong>area, pincode:</strong> Used for matching with cafe owners' area and pincode.</li>
+<li><strong>name, address, phone:</strong> Player contact information.</li>
+<li><strong>deleted_at:</strong> Used for soft deletion.</li>
 </ul>
 <hr />
 <h3 id="6-roles">6. roles<a class="headerlink" href="#6-roles" title="Permanent link">&para;</a></h3>
-<p>This table defines all <strong>user roles</strong> in the system.</p>
+<p>This table defines all <strong>user roles</strong> in the RBAC system.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">roles</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">description</span><span class="w">     </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>name:</strong> Role name (<code>player</code>, <code>owner</code>, <code>admin</code>).</li>
-<li><strong>description:</strong> Explains what this role can do.</li>
+<li><strong>name:</strong> Role name (e.g., <code>player</code>, <code>owner</code>, <code>admin</code>).</li>
+<li><strong>Note:</strong> Currently using enum-based roles (<code>register_as</code> in users table) for simplicity.</li>
 </ul>
 <hr />
 <h3 id="7-permissions">7. permissions<a class="headerlink" href="#7-permissions" title="Permanent link">&para;</a></h3>
@@ -1070,13 +1107,13 @@ permissions {
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
 <span class="w">    </span><span class="n">description</span><span class="w">     </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
-<li><strong>name:</strong> The action name (e.g., <code>'create_slot'</code>, <code>'book_cafe'</code>).</li>
+<li><strong>name:</strong> The action name (e.g., <code>'create_slot'</code>, <code>'book_slot'</code>, <code>'manage_cafe'</code>).</li>
 <li><strong>description:</strong> Describes what that permission allows.</li>
 </ul>
 <hr />
@@ -1086,14 +1123,33 @@ permissions {
 <span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
 <span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
 <span class="w">    </span><span class="n">permission_id</span><span class="w">   </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">permissions</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">updated_at</span><span class="w">      </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="k">TIMESTAMP</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+<span class="w">    </span><span class="k">UNIQUE</span><span class="p">(</span><span class="n">role_id</span><span class="p">,</span><span class="w"> </span><span class="n">permission_id</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div>
 <ul>
 <li><strong>role_id:</strong> The role being assigned a permission.</li>
 <li><strong>permission_id:</strong> The permission being granted to that role.</li>
+<li><strong>Unique constraint:</strong> Prevents duplicate role-permission assignments.</li>
+</ul>
+<h3 id="9-user_roles">9. user_roles<a class="headerlink" href="#9-user_roles" title="Permanent link">&para;</a></h3>
+<p>This <strong>junction table</strong> connects <code>users</code> and <code>roles</code> (many-to-many).</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">user_roles</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w">              </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">role_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">roles</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">modified_at</span><span class="w">     </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deleted_at</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+<span class="w">    </span><span class="k">UNIQUE</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">role_id</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>user_id:</strong> The user being assigned a role.</li>
+<li><strong>role_id:</strong> The role being assigned to that user.</li>
+<li><strong>Unique constraint:</strong> Prevents duplicate user-role assignments.</li>
 </ul>
 <hr />
 <h2 id="indexing-strategy"><strong>Indexing Strategy</strong><a class="headerlink" href="#indexing-strategy" title="Permanent link">&para;</a></h2>
@@ -1101,63 +1157,64 @@ permissions {
 <p>These are automatically created by PostgreSQL:</p>
 <ul>
 <li><strong>Primary keys</strong> → on all tables (<code>id</code>)</li>
-<li>
-<p><strong>Unique constraints</strong> →</p>
-</li>
-<li>
-<p><code>users.email</code></p>
-</li>
-<li><code>users.phone</code></li>
+<li><strong>Unique constraints</strong> →</li>
+<li><code>users.username</code></li>
+<li><code>users.email</code></li>
+<li><code>owners.user_id</code></li>
+<li><code>players.user_id</code></li>
 <li><code>roles.name</code></li>
 <li><code>permissions.name</code></li>
-<li><code>cafes.owner_id</code> (indirectly indexed via FK)</li>
+<li><code>role_permissions(role_id, permission_id)</code> - unique constraint</li>
+<li><code>user_roles(user_id, role_id)</code> - unique constraint</li>
 </ul>
 <h3 id="foreign-keys-for-faster-joins-and-lookups"><strong>Foreign keys</strong> (for faster JOINs and lookups)<a class="headerlink" href="#foreign-keys-for-faster-joins-and-lookups" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>cafes</code>: <code>owner_id</code></li>
-<li><code>games</code>: <code>cafe_id</code></li>
-<li><code>slots</code>: <code>cafe_id</code>, <code>game_id</code></li>
-<li><code>bookings</code>: <code>slot_id</code>, <code>player_id</code></li>
-<li><code>users</code>: <code>role_id</code></li>
+<li><code>owners</code>: <code>user_id</code></li>
+<li><code>players</code>: <code>user_id</code></li>
+<li><code>games</code>: <code>owner_id</code></li>
+<li><code>slots</code>: <code>owner_id</code>, <code>player_id</code></li>
+<li><code>user_roles</code>: <code>user_id</code>, <code>role_id</code></li>
 <li><code>role_permissions</code>: <code>role_id</code>, <code>permission_id</code></li>
 </ul>
-<p>These indexes improve <strong>JOIN performance</strong> between related tables</p>
+<p>These indexes improve <strong>JOIN performance</strong> between related tables.</p>
 <h3 id="singular-indexes"><strong>Singular Indexes</strong><a class="headerlink" href="#singular-indexes" title="Permanent link">&para;</a></h3>
 <p>A <strong>singular index</strong> is created on <strong>one column only</strong>.
 It helps speed up queries that filter, sort, or search using a single field.</p>
-<p><strong>Examples in GamerGrid:</strong></p>
+<p><strong>Examples in GameGrid:</strong></p>
 <ul>
-<li><code>users.email</code> → used during login authentication.</li>
-<li><code>cafes.city</code> → used for city-based café searches.</li>
-<li><code>slots.status</code> → used to quickly find all available/booked slots.</li>
-<li><code>bookings.booking_time</code> → used for date or time-based reports.</li>
+<li><code>users.username</code> → used during login authentication.</li>
+<li><code>users.email</code> → used for email-based lookups.</li>
+<li><code>slots.status</code> → used to quickly find all available/pending/booked slots.</li>
+<li><code>slots.date</code> → used for date-based slot filtering.</li>
+<li><code>owners.area</code> → used for area-based cafe searches.</li>
+<li><code>owners.pincode</code> → used for pincode-based cafe searches.</li>
 </ul>
 <h3 id="composite-indexes"><strong>Composite Indexes</strong><a class="headerlink" href="#composite-indexes" title="Permanent link">&para;</a></h3>
 <p>A <strong>composite index</strong> combines <strong>two or more columns</strong> into one index.
-It helps when queries use <strong>multiple conditions together</strong> (e.g. city + area, or cafe_id + status).</p>
-<p><strong>Examples in GamerGrid:</strong></p>
+It helps when queries use <strong>multiple conditions together</strong> (e.g. area + pincode, or owner_id + status).</p>
+<p><strong>Examples in GameGrid:</strong></p>
 <ul>
-<li><code>cafes(city, area)</code> → for nearby café search (city + area combined).</li>
-<li><code>slots(cafe_id, status)</code> → for showing only available slots of a specific café.</li>
-<li><code>bookings(player_id, slot_id)</code> → for fetching all bookings of one player.</li>
-<li><code>games(cafe_id, name)</code> → for looking up games under a specific café.</li>
+<li><code>owners(area, pincode)</code> → for nearby cafe search (area + pincode combined).</li>
+<li><code>slots(owner_id, status)</code> → for showing only available slots of a specific cafe.</li>
+<li><code>slots(owner_id, date)</code> → for fetching slots by date for a specific cafe.</li>
+<li><code>games(owner_id, name)</code> → for looking up games under a specific cafe owner.</li>
 </ul>
 <h2 id="architecture"><strong>Architecture</strong><a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <h2 id="system-architecture-overview">System Architecture Overview<a class="headerlink" href="#system-architecture-overview" title="Permanent link">&para;</a></h2>
-<p>RetailPulse is a standard web application with three layers:</p>
+<p>GameGrid is a standard web application with three layers:</p>
 <ol>
-<li><strong>Frontend</strong>: A React application that users see in their web browser.</li>
-<li><strong>Backend</strong>: A FastAPI application that contains all the business logic.</li>
+<li><strong>Frontend</strong>: A React 19 application that users see in their web browser (Vite dev server).</li>
+<li><strong>Backend</strong>: A FastAPI application that contains all the business logic and API endpoints.</li>
 <li><strong>Database</strong>: A PostgreSQL database that stores all the data.</li>
 </ol>
 <hr />
 <h2 id="aws-specific-architecture-diagram">AWS-Specific Architecture Diagram<a class="headerlink" href="#aws-specific-architecture-diagram" title="Permanent link">&para;</a></h2>
 <p>This diagram shows a simplified view of the system hosted on AWS.</p>
-<p><img alt="RetailPulse AWS Architecture" src="assets/Architecture.png" /></p>
+<p><img alt="GameGrid AWS Architecture" src="assets/Architecture.png" /></p>
 <hr />
 <h2 id="data-flow-diagrams"><strong>Data Flow Diagrams</strong><a class="headerlink" href="#data-flow-diagrams" title="Permanent link">&para;</a></h2>
 <h2 id="1-user-login-authentication-flow">1. User Login &amp; Authentication Flow<a class="headerlink" href="#1-user-login-authentication-flow" title="Permanent link">&para;</a></h2>
-<p>This shows how a <strong>player or café owner logs into GamerGrid</strong>.</p>
+<p>This shows how a <strong>player or cafe owner logs into GameGrid</strong>.</p>
 <pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
 sequenceDiagram
     actor User
@@ -1181,8 +1238,8 @@ sequenceDiagram
         UI--&gt;&gt;User: Display message ("Account not found. Please sign up first.")
     end
 </code></pre>
-<h2 id="2-owner-adds-cafe-flow">2. Owner Adds Café Flow<a class="headerlink" href="#2-owner-adds-cafe-flow" title="Permanent link">&para;</a></h2>
-<p>This shows how a <strong>café owner registers and adds their café</strong>.</p>
+<h2 id="2-owner-adds-cafe-flow">2. Owner Adds Cafe Flow<a class="headerlink" href="#2-owner-adds-cafe-flow" title="Permanent link">&para;</a></h2>
+<p>This shows how a <strong>cafe owner registers and adds their cafe</strong>.</p>
 <pre class="mermaid"><code>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'fontFamily':'Arial'}}}%%
 sequenceDiagram
     actor Owner
@@ -1190,17 +1247,17 @@ sequenceDiagram
     participant API as Backend
     participant DB as Database
 
-    Owner-&gt;&gt;UI: Opens "Add Café" form
-    UI-&gt;&gt;API: Submits café details (cafe name,address,phone,pincode,area.)
-    API-&gt;&gt;DB: Insert café record 
+    Owner-&gt;&gt;UI: Opens "Add Cafe Details" form
+    UI-&gt;&gt;API: Submits cafe details (cafe_name, address, phone, pincode, area)
+    API-&gt;&gt;DB: Insert/Update owner record 
 
     alt Insertion Successful
         DB--&gt;&gt;API: Return success confirmation
-        API--&gt;&gt;UI: Send "Café Added Successfully" response
-        UI--&gt;&gt;Owner: Display success message ("Café added successfully!")
+        API--&gt;&gt;UI: Send "Cafe details added successfully" response
+        UI--&gt;&gt;Owner: Redirect to "Add Games" page
     else Insertion Failed
-        DB--&gt;&gt;API: Return error (e.g., DB connection or constraint error)
-        API--&gt;&gt;UI: Send "Failed to add café" error response
+        DB--&gt;&gt;API: Return error (e.g., DB connection or validation error)
+        API--&gt;&gt;UI: Send "Failed to add cafe details" error response
         UI--&gt;&gt;Owner: Display error message ("Something went wrong. Please try again.")
     end
 </code></pre>
@@ -1215,12 +1272,12 @@ sequenceDiagram
 
     Owner-&gt;&gt;UI: Fills out game details (game name)
     UI-&gt;&gt;API: Sends game data
-    API-&gt;&gt;DB: Save new game under selected café
+    API-&gt;&gt;DB: Save new game under owner's cafe
 
     alt Game Saved Successfully
-        DB--&gt;&gt;API: Return success confirmation
+        DB--&gt;&gt;API: Return success confirmation with game data
         API--&gt;&gt;UI: Send "Game Added Successfully"
-        UI--&gt;&gt;Owner: Display success message ("Game added successfully!")
+        UI--&gt;&gt;Owner: Display game in list and allow adding more games
     else Game Save Failed
         DB--&gt;&gt;API: Return error (e.g., DB constraint or connection error)
         API--&gt;&gt;UI: Send "Failed to add game" error response
@@ -1261,30 +1318,51 @@ sequenceDiagram
     participant DB as Database
     participant Owner as Cafe Owner Dashboard
 
-    Player-&gt;&gt;UI: Searches nearby cafés
-    note right of Player: Search can be done by&lt;br&gt;• Pincode&lt;br&gt;• City&lt;br&gt;• Area
-    UI-&gt;&gt;API: Sends request to fetch cafés and slots (with location filters)
-    API-&gt;&gt;DB: Fetch cafés, games, and slot data based on filters
-    DB--&gt;&gt;API: Return available cafés and slots
-    API--&gt;&gt;UI: Display results (cafés, games, available slots)
+    Player-&gt;&gt;UI: Clicks "Find Cafe Near Me"
+    note right of Player: Search filters by&lt;br&gt;• Matching Area (case-insensitive)&lt;br&gt;• Matching Pincode
+    UI-&gt;&gt;API: Sends request to fetch nearby cafes
+    API-&gt;&gt;DB: Fetch cafes matching player's area and pincode
+    DB--&gt;&gt;API: Return matching cafes (name, address, phone only)
+    API--&gt;&gt;UI: Display results (cafe list)
 
-    Player-&gt;&gt;UI: Selects slot and clicks "Book"
-    UI-&gt;&gt;API: Sends booking request (slot_id, player_id)
-    API-&gt;&gt;DB: Create booking record (status = pending)
-    API-&gt;&gt;Owner: Notify café owner of new booking request
+    Player-&gt;&gt;UI: Clicks "Click to view games" for a cafe
+    UI-&gt;&gt;API: Fetch cafe games and details
+    API-&gt;&gt;DB: Fetch games and cafe details
+    DB--&gt;&gt;API: Return games and cafe info
+    API--&gt;&gt;UI: Display games and "Book Slot" option
 
-    Owner-&gt;&gt;API: Approves or rejects booking
-    alt Booking Approved
-        API-&gt;&gt;DB: Update slot.status = "booked"
-        DB--&gt;&gt;API: Confirm booking
-        API--&gt;&gt;UI: Send "Booking Confirmed" response
-        UI--&gt;&gt;Player: Show success message ("Booking confirmed successfully!")
-    else Booking Rejected
-        API-&gt;&gt;DB: Set slot.status = "available"
-        API--&gt;&gt;UI: Send "Booking Rejected" message
-        UI--&gt;&gt;Player: Display rejection message ("Booking request rejected.")
-    end
+    Player-&gt;&gt;UI: Selects date and slot, clicks "Book Slot"
+    UI-&gt;&gt;API: Sends booking request (slot_id)
+    API-&gt;&gt;DB: Update slot (status = pending, player_id, pending_expires_at = 1 minute)
+    DB--&gt;&gt;API: Confirm booking initiated
+    API--&gt;&gt;UI: Send "Booking initiated" response
+    UI--&gt;&gt;Player: Show "Payment pending..." message
+
+    Owner-&gt;&gt;API: Views pending slots, sees player name and phone
+    Owner-&gt;&gt;API: Sends QR code on WhatsApp, clicks "Approve Booking"
+    API-&gt;&gt;DB: Update slot.status = "booked"
+    DB--&gt;&gt;API: Confirm booking
+    API--&gt;&gt;UI: Send "Booking Confirmed" response
+    UI--&gt;&gt;Player: Show "Congratulations! Your slot is booked by cafe owner" message
 </code></pre>
+<hr />
+<h3 id="additional-future-enhancements"><strong>Additional Future Enhancements</strong><a class="headerlink" href="#additional-future-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Role-Based Access Control (RBAC):</strong> Implement granular permission system with dynamic role assignment, role hierarchy, and custom permissions per cafe (Admin, Manager, Staff roles for owners; Premium, Regular roles for players)</li>
+<li><strong>Google Maps API Integration:</strong> Location-based cafe search with interactive map view, distance calculation, route navigation, and address autocomplete using Google Maps Geocoding and Places API</li>
+<li><strong>Payment Gateway Integration:</strong> Secure online payment processing with Razorpay/Stripe/PayPal integration, automatic payment verification, payment history tracking, refund management, and multiple payment methods (UPI, cards, wallets, netbanking)</li>
+<li><strong>Real-time Notifications:</strong> WebSocket integration for live updates on bookings, console availability, and payment confirmations</li>
+<li><strong>Rating &amp; Reviews:</strong> Allow players to rate cafes and write reviews, helping other players make informed decisions</li>
+<li><strong>Analytics Dashboard:</strong> Business insights for cafe owners including booking trends, peak hours, revenue reports, and popular games</li>
+<li><strong>Mobile App:</strong> Native iOS and Android applications for better mobile user experience</li>
+<li><strong>Multi-language Support:</strong> Support for regional languages (Hindi, Tamil, Telugu, etc.) for wider accessibility</li>
+<li><strong>Advanced Booking Features:</strong> booking cancellation with refund policies</li>
+<li><strong>Chat/Messaging System:</strong> Direct communication between players and cafe owners for queries and support</li>
+<li><strong>Waitlist Management:</strong> Queue system for fully booked time slots with automatic notifications when slots become available</li>
+<li><strong>Booking Reminders:</strong> Automated SMS/Email reminders before booking time slots</li>
+<li><strong>Dark Mode:</strong> Theme customization for better user experience</li>
+</ul>
+<hr />
 
 
 
