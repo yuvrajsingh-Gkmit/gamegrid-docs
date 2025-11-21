@@ -478,15 +478,6 @@ CREATE TABLE players (
 ---
 
 
-
-
-
-```
-
-* **name:** The action name (e.g., `'create_slot'`, `'book_slot'`, `'manage_cafe'`).
-* **description:** Describes what that permission allows.
-
-
 ### 10. consoles
 
 This table manages all **gaming consoles** in each cafe (available, pending, booked).
