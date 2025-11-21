@@ -1,7 +1,7 @@
-site_name: GamerGrid - A connected network of gamers and cafés everywhere
-site_description: A web-based platform that connects players and gaming cafés through data-driven interaction.
+site_name: GameGrid
+site_description: Smart Gaming Cafe Management & Slot-Tracking and Booking Platform - A web-based platform that connects players and gaming cafés through data-driven interaction.
 site_author: Yuvraj Singh
-site_url: http://127.0.0.1:8000
+site_url: http://127.0.0.1:8001
 
 # -------------------------------------------------
 # Django-style theme (mkdocs-material with Django palette)
@@ -25,15 +25,19 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.indexes
+    - navigation.sections
     - toc.integrate
     - search.highlight
     - search.suggest
+    - content.code.annotate
+    - content.code.copy
   icon:
     logo: material/gamepad-variant
     repo: fontawesome/brands/github
 
 repo_url: https://github.com/yuvrajsingh-Gkmit/gamegrid-docs
-repo_name: gamehub-connect
+repo_name: GameGrid Docs
+edit_uri: edit/main/gamegrid/docs/
 
 nav:
   - Home: index.md
@@ -45,15 +49,41 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
   - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
   - attr_list
   - md_in_html
   - toc:
       permalink: true
+      baselevel: 2
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yuvrajsingh-Gkmit/gamegrid-docs
+      name: GitHub Repository
+  version:
+    provider: mike
+
+plugins:
+  - search:
+      lang: en
+  - mermaid2:
+      arguments:
+        theme: default
+        themeVariables:
+          primaryColor: '#6366f1'
+          primaryTextColor: '#fff'
+          primaryBorderColor: '#4f46e5'
+          lineColor: '#e5e7eb'
+          secondaryColor: '#f3f4f6'
+          tertiaryColor: '#ffffff'
