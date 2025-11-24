@@ -1,6 +1,6 @@
 # 🎮 **GameGrid**
 
-**Smart Gaming Cafe Management & Slot-Tracking and Booking Platform**
+**Smart Gaming Cafe Management & Console-Tracking and Booking Platform**
 
 ---
 
@@ -112,26 +112,21 @@ The system verifies the provided credentials in the database.
 
 ## **Authorization Rules**
 
-GamerGrid uses a **Role-Based Access Control (RBAC)** system to manage permissions and access.
+GameGrid currently uses a **simple role-based access control** system based on user type.
 
-* A user’s **role** (Player or Owner) defines what features they can access in the system.
+* A user's **role** (Player or Owner) defines what features they can access in the system.
 * **Players** can:
 
   * Search nearby cafés
-  * View available games and slots
-  * Book slots
+  * View available games and console
+  * Book console
 * **Café Owners** can:
 
   * Add and manage cafés
   * Add or edit games
   * Create, update, time slots
- 
-* Each role is linked to specific **permissions**, which control what actions they can perform and what pages they can access.
-* The RBAC model is implemented using three core tables:
 
-  * `roles`
-  * `permissions`
-  * `role_permissions`
+* **Note:** A full **Role-Based Access Control (RBAC)** system with granular permissions is planned for future implementation. See the [Future Scope](#future-scope) section for details.
 
 
 ## **Authentication & Authorization Flow**
@@ -276,7 +271,7 @@ It's secure, reliable, and perfect for handling real-time gaming cafe operations
 - All tables use **UUID primary keys** for better security
 - **Soft deletion** support with `deleted_at` timestamps
 - **Automatic timestamps** (`created_at`, `modified_at`)
-- **RBAC support** with roles, permissions, and user_roles tables
+- **Role-based access** using simple user roles (player/owner) - RBAC with granular permissions planned for future
 
 ---
 
