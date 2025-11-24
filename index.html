@@ -563,7 +563,7 @@
 <article class="md-content__inner md-typeset">
 <h1>Home</h1>
 <h2 id="gamegrid">🎮 <strong>GameGrid</strong><a class="headerlink" href="#gamegrid" title="Permanent link">¶</a></h2>
-<p><strong>Smart Gaming Cafe Management &amp; Slot-Tracking and Booking Platform</strong></p>
+<p><strong>Smart Gaming Cafe Management &amp; Console-Tracking and Booking Platform</strong></p>
 <hr/>
 <h3 id="introduction"><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permanent link">¶</a></h3>
 <p>Players can use to <strong>gamegrid</strong> find nearby gaming cafes and see which games are available.<br/>
@@ -666,17 +666,17 @@ The system verifies the provided credentials in the database.</p>
 </ul>
 <hr/>
 <h3 id="authorization-rules"><strong>Authorization Rules</strong><a class="headerlink" href="#authorization-rules" title="Permanent link">¶</a></h3>
-<p>GamerGrid uses a <strong>Role-Based Access Control (RBAC)</strong> system to manage permissions and access.</p>
+<p>GameGrid currently uses a <strong>simple role-based access control</strong> system based on user type.</p>
 <ul>
-<li>A user’s <strong>role</strong> (Player or Owner) defines what features they can access in the system.</li>
+<li>A user's <strong>role</strong> (Player or Owner) defines what features they can access in the system.</li>
 <li>
 <p><strong>Players</strong> can:</p>
 </li>
 <li>
 <p>Search nearby cafés</p>
 </li>
-<li>View available games and slots</li>
-<li>Book slots</li>
+<li>View available games and console</li>
+<li>Book console</li>
 <li>
 <p><strong>Café Owners</strong> can:</p>
 </li>
@@ -688,16 +688,8 @@ The system verifies the provided credentials in the database.</p>
 <p>Create, update, time slots</p>
 </li>
 <li>
-<p>Each role is linked to specific <strong>permissions</strong>, which control what actions they can perform and what pages they can access.</p>
+<p><strong>Note:</strong> A full <strong>Role-Based Access Control (RBAC)</strong> system with granular permissions is planned for future implementation. See the <a href="#future-scope">Future Scope</a> section for details.</p>
 </li>
-<li>
-<p>The RBAC model is implemented using three core tables:</p>
-</li>
-<li>
-<p><code>roles</code></p>
-</li>
-<li><code>permissions</code></li>
-<li><code>role_permissions</code></li>
 </ul>
 <h3 id="authentication-authorization-flow"><strong>Authentication &amp; Authorization Flow</strong><a class="headerlink" href="#authentication-authorization-flow" title="Permanent link">¶</a></h3>
 <p><br/> <!-- 👈 This line adds space so heading doesn't overlap the chart --></p>
@@ -929,7 +921,7 @@ It's secure, reliable, and perfect for handling real-time gaming cafe operations
 - All tables use <strong>UUID primary keys</strong> for better security
 - <strong>Soft deletion</strong> support with <code>deleted_at</code> timestamps
 - <strong>Automatic timestamps</strong> (<code>created_at</code>, <code>modified_at</code>)
-- <strong>RBAC support</strong> with roles, permissions, and user_roles tables</p>
+- <strong>Role-based access</strong> using simple user roles (player/owner) - RBAC with granular permissions planned for future</p>
 <hr/>
 <h3 id="entity-relationship-diagram">Entity Relationship Diagram<a class="headerlink" href="#entity-relationship-diagram" title="Permanent link">¶</a></h3>
 <p>This diagram shows how the main data tables of <strong>GameGrid</strong> are connected.
